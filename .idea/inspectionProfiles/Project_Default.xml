@@ -1,0 +1,36 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="pygame" />
+          <option value="python-dotenv" />
+          <option value="torch" />
+          <option value="transformers" />
+          <option value="datasets" />
+          <option value="faster-whisper" />
+          <option value="silero-vad" />
+          <option value="ffmpeg-python" />
+          <option value="pysrt" />
+          <option value="webvtt-py" />
+          <option value="fastapi" />
+          <option value="uvicorn" />
+          <option value="websockets" />
+          <option value="yt-dlp" />
+          <option value="soundfile" />
+          <option value="librosa" />
+          <option value="evaluate" />
+          <option value="jiwer" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="typing.Coroutine.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

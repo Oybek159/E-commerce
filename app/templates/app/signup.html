@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Sign Up Page{% endblock %}
+{% block content %}
+<link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'app/css/signup.css' %}">
+<div class="container bootstrap snippets bootdey">
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li ><a href="http://getbootstrap.com/examples/jumbotron-narrow/#">Home</a></li>
+      <li class="active"><a href="http://getbootstrap.com/examples/jumbotron-narrow/#">Register</a></li>
+      <li><a href="http://getbootstrap.com/examples/jumbotron-narrow/#">About</a></li>
+    </ul>
+    <h3 class="text-muted prj-name">Project name</h3>
+  </div>
+
+  <div class="jumbotron text-center" style="min-height:400px;height:auto;">
+    <div class="col-md-10 col-md-offset-2">
+        <form class="form-horizontal" role="form" method="POST">
+             {% csrf_token %}
+            
+            
+            <div class="form-group text-center">
+                <div class="col-sm-10 reg-icon">
+                    <span class="fa fa-user fa-3x">Sign up</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                  <label class="inline-block mb-2">Username</label><br>
+                  {{ form.username }}
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10">
+                 <label class="inline-block mb-2">Email</label><br>
+                 {{ form.email }}
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <label class="inline-block mb-2">Password</label><br>
+                  {{ form.password1 }}
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <label class="inline-block mb-2">Password confirmation</label><br>
+                  {{ form.password2 }}
+                </div>
+              </div>
+
+              {% if form.errors or form.non_field_errors %}
+                  <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                        {% for field in form %}
+                            {{ field.errors }}
+                        {% endfor %}
+                  </div>
+              {% endif %}
+            <!-- Django ni o'zini default form to'ldirish -->
+            
+            <!-- {% for field in forms %}
+            <div class="form-group">
+              {{ field.errors }}
+                <div class="col-sm-10">
+                  <input type="{{ field.field.widget.input_type }}" 
+                  name="{{ field.html_name }}"
+                  class="form-control" 
+                  id="{{ filed.id_for_label }}" 
+                  placeholder="{{ field.label }}">
+                </div>
+              </div> 
+            {% endfor %} -->
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-info">
+                    <span class="glyphicon glyphicon-share-alt"></span>
+                    Register
+                  </button>
+                </div>
+              </div>
+        </form>
+    </div>
+  </div>
+</div>     
+{% endblock %}  

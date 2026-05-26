@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}New Item{% endblock %}
+{% block content %}
+<h1 class="mb-6 text-3xl"> New Item</h1>
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="spave-y-4">
+        {{form.as_p}}
+    </div>
+    {% if form.errors or form.non_field_errors %}
+                  <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                        {% for field in form %}
+                            {{ field.errors }}
+                        {% endfor %}
+                  </div>
+    {% endif %}
+    <button type="submit" class="btn btn-info">
+                    <span></span>
+                    Submit
+    </button>
+</form>
+{% endblock %}
